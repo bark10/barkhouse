@@ -9,7 +9,7 @@ tiles = {
 
 })
 minetest.register_node("barkhouse:graywood_pine", {
-	description = "Graywood",
+	description = "Light Graywood",
 tiles = {
 		"barkhouse_graywood_pine.png",
 	},
@@ -18,7 +18,7 @@ tiles = {
 
 })
 minetest.register_node("barkhouse:graywood_jungle", {
-	description = "Graywood",
+	description = "Dark Graywood",
 tiles = {
 		"barkhouse_graywood_jungle.png",
 	},
@@ -26,6 +26,31 @@ tiles = {
 	sounds = default.node_sound_wood_defaults(),
 
 })
+
+-- Wardrobe (decorative)
+minetest.register_node("barkhouse:wardrobe", {
+      description = "Wardrobe",
+      paramtype2 = "facedir",
+      tiles = {
+                 "wardrobe_wardrobe_topbottom.png",
+                 "wardrobe_wardrobe_topbottom.png",
+                 "wardrobe_wardrobe_sides.png",
+                 "wardrobe_wardrobe_sides.png",
+                 "wardrobe_wardrobe_sides.png",
+                 "wardrobe_wardrobe_front.png"
+              },
+      inventory_image = "wardrobe_wardrobe_front.png",
+      sounds = default.node_sound_wood_defaults(),
+      groups = { choppy = 3, oddly_breakable_by_hand = 2, flammable = 3 },
+   });
+
+minetest.register_craft(
+   {
+      output = "wardrobe:wardrobe",
+      recipe = { { "group:wood", "group:stick", "group:wood" },
+                 { "group:wood", "group:wool",  "group:wood" },
+                 { "group:wood", "group:wool",  "group:wood" } }
+   });
 
 -- Iron Bar Floor
 minetest.register_node("barkhouse:iron_bar_floor", {
@@ -122,6 +147,9 @@ minetest.register_node("barkhouse:lotteryblock", {
       end
    end,
 })
+
+
+-- Fluorescent blocks
 
 minetest.register_node("barkhouse:fluorescent_water_source", {
 	description = "Fluorescent Water Source",
