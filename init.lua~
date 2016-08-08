@@ -4,6 +4,5 @@ dofile(modpath .. "/nodes.lua")
 dofile(modpath .. "/items.lua")
 dofile(modpath .. "/crafting.lua")
 dofile(modpath .. "/tools.lua")
-dofile(modpath .. "/bathroom.lua")
 
 
