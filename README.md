@@ -8,7 +8,8 @@ This mod consist of ideas that we come up with and implement on the Barkhouse se
 ## Changelog
 __0.1.5__
 * Added _ironstone_cobble_ that is dropped when mining _moreblocks:iron_stone_ (depends on [moreblocks](https://forum.minetest.net/viewtopic.php?id=509) by Calinou) (ironstone cobble texture by Gold).
-* Added Smoked Glass and _Smoked Glass Fragments_ for that tinted glass look. Recipe: vessels:glass_fragments + moreblocks:coal_dust = barkhouse:smoked_glass_fragments. This is then burned in furnace to create barkhouse:smoked_glass
+* Added Smoked Glass and _Smoked Glass Fragments_ for that tinted glass look. Recipe: vessels:glass_fragments + moreblocks:coal_dust = barkhouse:smoked_glass_fragments. This is then burned in furnace to create barkhouse:smoked_glass+
+
 
 __0.1.4__
 * Added Cobble Brick and Weathered Cobble Brick (textures by Gold)
@@ -31,6 +32,7 @@ __0.1.3__
 * Bathroom nodes
 * Wood panels
 * Hardened dirt
+* Graywood (aged wood) - comes in three wood types
 
 ================================
 ##Items
