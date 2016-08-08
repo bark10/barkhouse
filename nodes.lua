@@ -32,11 +32,19 @@ minetest.register_node("barkhouse:wardrobe", {
       description = "Wardrobe",
       paramtype2 = "facedir",
       tiles = {
+<<<<<<< HEAD
                  "default_wood.png",
                  "default_wood.png",
                  "default_wood.png",
                  "default_wood.png",
                  "default_wood.png",
+=======
+                 "wardrobe_wardrobe_topbottom.png",
+                 "wardrobe_wardrobe_topbottom.png",
+                 "wardrobe_wardrobe_sides.png",
+                 "wardrobe_wardrobe_sides.png",
+                 "wardrobe_wardrobe_sides.png",
+>>>>>>> 67acba060ef1980e39dccf691583bc16fc0a4a70
                  "wardrobe_wardrobe_front.png"
               },
       inventory_image = "wardrobe_wardrobe_front.png",
