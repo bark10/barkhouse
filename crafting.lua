@@ -1,4 +1,31 @@
--- Recipes for Vinegar
+-- Recipes for bricks
+minetest.register_craft({
+        output = "barkhouse:cobble_brick",
+        recipe = {
+                {"barkhouse:vinegar","barkhouse:cobble_weathered_brick"},
+        },
+})
+minetest.register_craft({
+        output = "barkhouse:cobble_weathered_brick",
+        recipe = {
+                {"barkhouse:vinegar","barkhouse:cobble_brick"},
+        },
+})
+minetest.register_craft({
+        output = "barkhouse:cobble_brick",
+        recipe = {
+                {"barkhouse:vinegar","default:brick"},
+        },
+})
+minetest.register_craft({
+        output = "barkhouse:cobble_weathered_brick",
+        recipe = {
+                {"barkhouse:vinegar","default:brick"},
+        },
+})
+
+
+-- Reecipes for Vinegar
 minetest.register_craft({
 	output = "barkhouse:vinegar",
 	recipe = {

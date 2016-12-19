@@ -1,3 +1,46 @@
+-- Dry Leaves
+minetest.register_node("barkhouse:dry_leaves", {
+	description = "Dry Leaves",
+	drawtype = "allfaces_optional",
+	waving = 1,
+	tiles = {"barkhouse_dry_leaves.png"},
+	paramtype = "light",
+	is_ground_content = false,
+	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
+	drop = {
+		max_items = 1,
+		items = {
+			{
+				-- player will get sapling with 1/20 chance
+				items = {'default:sapling'},
+				rarity = 20,
+			},
+			{
+				-- player will get leaves only if he get no saplings,
+				-- this is because max_items is 1
+				items = {'barkhouse:dry_leaves'},
+			}
+		}
+	},
+	sounds = default.node_sound_leaves_defaults(),
+
+	after_place_node = default.after_place_leaves,
+})
+
+-- White light
+minetest.register_node("barkhouse:white_lamp", {
+	description = "White Lamp",
+	use_texture_alpha = false,
+	tiles = {"barkhouse_light.png"},
+	is_ground_content = false,
+	drawtype = "glasslike",
+	light_source = 10,
+	sunlight_propagates = false,
+	groups = {cracky = 2, stone = 1},
+	sounds = default.node_sound_glass_defaults(),
+})
+
+
 -- Graywood
 minetest.register_node("barkhouse:graywood", {
 	description = "Graywood",
@@ -32,19 +75,11 @@ minetest.register_node("barkhouse:wardrobe", {
       description = "Wardrobe",
       paramtype2 = "facedir",
       tiles = {
-<<<<<<< HEAD
                  "default_wood.png",
                  "default_wood.png",
                  "default_wood.png",
                  "default_wood.png",
                  "default_wood.png",
-=======
-                 "wardrobe_wardrobe_topbottom.png",
-                 "wardrobe_wardrobe_topbottom.png",
-                 "wardrobe_wardrobe_sides.png",
-                 "wardrobe_wardrobe_sides.png",
-                 "wardrobe_wardrobe_sides.png",
->>>>>>> 67acba060ef1980e39dccf691583bc16fc0a4a70
                  "wardrobe_wardrobe_front.png"
               },
       inventory_image = "wardrobe_wardrobe_front.png",
@@ -513,4 +548,28 @@ minetest.register_node("barkhouse:smoked_glass", {
 	sunlight_propagates = true,
 	groups = {cracky = 2, stone = 1},
 	sounds = default.node_sound_glass_defaults(),
+})
+
+-- BONES
+minetest.register_node("barkhouse:bones", {
+    description = "Special Bones",
+      tiles = {
+        {
+            name = "barkhouse_headbone.png",
+            animation = {
+                type     = "vertical_frames",
+                aspect_w = 16,
+                aspect_h = 16,
+                length   = 2.0
+            }
+        }
+    },
+    paramtype2 = "facedir",
+    groups = {dig_immediate=2},
+    light_source = 14,
+    sounds = default.node_sound_dirt_defaults({
+        footstep = {name="default_gravel_footstep", gain=0.5},
+        dug = {name="default_gravel_footstep", gain=1.0},
+    }),
+ 
 })
