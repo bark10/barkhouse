@@ -1,15 +1,15 @@
 ## Mods currently running on Barkhouse
-* [3d_armor]
+* [3d_armor](https://forum.minetest.net/viewtopic.php?id=4654)
 * [alias]
-* [ambience]
-* [areas]
-* [awards]
-* [bacon]
+* [ambience](https://forum.minetest.net/viewtopic.php?t=2807)
+* [areas](https://forum.minetest.net/viewtopic.php?t=7239)
+* [awards](https://github.com/minetest-mods/awards)
+* [bacon](https://forum.minetest.net/viewtopic.php?f=11&t=8965)
 * [barkhouse](https://github.com/bark10/barkhouse)
-* [~~basic_machines~~]
+* [~~basic_machines~~](https://forum.minetest.net/viewtopic.php?f=9&t=12033&hilit=rnd+machines)
 * [bathroom](https://github.com/bark10/bathroom)
-* [bees]
-* [blackholes]
+* [bees](https://github.com/bas080/bees)
+* [blackholes](https://forum.minetest.net/viewtopic.php?f=9&t=14597)
 * [~~books_plus~~]
 * [bows]
 * [carbonite]
@@ -67,7 +67,6 @@
 * [replacer](https://github.com/Sokomine/replacer)
 * [report](https://github.com/rubenwardy/report)
 * [serveressentials](https://github.com/GunshipPenguin/serveressentials)
-* [shields]
 * [signs_lib](https://github.com/bark10/signs_lib)
 * [simple_warp]
 * [spawners]
