@@ -28,6 +28,7 @@
 * [email](https://github.com/rubenwardy/email) [thread](https://forum.minetest.net/viewtopic.php?f=11&t=13754) Adds e-mail by using /mail player message
 * [farming_plus](https://github.com/PilzAdam/farming_plus) [thread](https://forum.minetest.net/viewtopic.php?id=2787)
 * [fire](https://forum.minetest.net/viewtopic.php?id=6145)
+* [fishing](https://github.com/MinetestForFun/fishing) Adds fishing
 * [fluorescence](https://github.com/bark10/fluorescence)
 * [food](https://forum.minetest.net/viewtopic.php?id=2960) Adds more foods
 * [freeze](https://github.com/PenguinDad/freeze) /freeze and /unfreeze player
