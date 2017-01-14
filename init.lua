@@ -63,7 +63,7 @@ minetest.register_node(":default:jungletree", {
 })
 
 -- These lines of code make picks weaker
-
+--[[
 minetest.register_tool(":default:pick_diamond", {
 	description = "Diamond Pickaxe",
 	inventory_image = "default_tool_diamondpick.png",
@@ -114,3 +114,4 @@ minetest.register_tool(":default:pick_bronze", {
 		damage_groups = {fleshy=4},
 	},
 })
+--]]
