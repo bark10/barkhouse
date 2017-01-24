@@ -1,22 +1,25 @@
 #!/bin/bash
 # Script to back up minetestworlds
 
+USER="bark"
 
-
-ARCHIVE="/home/$USER/.minetest/"
+LOGFILE="/home/$USER/minetest.log"
+MTFOLDER="/home/$USER/.minetest"
+ARCHIVE="/home/$USER/.minetest/archive"
 BACKUP_TARGET="/home/$USER/.minetest/backup"
-WORLD="/home/$USER/.minetest/worlds/test"
+WORLD="/home/$USER/.minetest/worlds/melke3"
 WORLD_DIR="/home/$USER/.minetest/worlds"
 MODS="/home/$USER/.minetest/mods"
 CONF="/home/$USER/.minetest/minetest.conf"
 
 # Stop server
-# <code missing>
+systemctl stop minetest-server
+echo "Stopped the minetest server"
 
 # Move big files out of the way
-mv $WORLD/rollback.sqlite $WORLD_DIR
-echo "Moved some big files out of the way"
-sleep 1
+#mv $WORLD/rollback.sqlite $WORLD_DIR
+#echo "Moved some big files out of the way"
+#sleep 1
 
 # Check if backup target folder exists
 if [ -d $BACKUP_TARGET ]; then
@@ -31,23 +34,53 @@ rsync -arv --delete $WORLD $MODS $CONF $BACKUP_TARGET
 echo "\"$WORLD\" was backed up successfully to \"$BACKUP_TARGET\"."; sleep 1
 
 # Move big files back
-mv $WORLD_DIR/rollback.sqlite $WORLD
-echo "Moved big files back"
-sleep 1
+#mv $WORLD_DIR/rollback.sqlite $WORLD
+#echo "Moved big files back"
+#sleep 1
 
-# Start server again
-# <code missing>
-
-# Compress and archive the backup instance.
+# Define timestamp function
 timestamp() {
   date +"%Y-%m-%d" 
 }
 
+# Archive the log file for the day
+cp $LOGFILE $MTFOLDER/logs/`timestamp`.log
+rm $LOGFILE
+# Clean log folder - delete oldest.
+keep=7 # Set this to how many files want to keep
+cd $MTFOLDER/logs
+discard=$(expr $keep - $(ls|wc -l))
+if [ $discard -lt 0 ]; then
+	ls -Bt|tail $discard|tr '\n' '\0'|xargs -0 printf "%b\0"|xargs -0 rm --
+fi
+
+# Start server again
+systemctl start minetest-server
+echo "Stopped the minetest server"
+
+# Check if archive folder exists
+if [ -d $ARCHIVE ]; then
+	echo "$ARCHIVE exists."; sleep 1
+else
+	mkdir $ARCHIVE
+	echo "Created folder $ARCHIVE"; sleep 1
+fi
+
+
+
+# Compress and MTFOLDER the backup instance.
 echo "Compressing and archiving backup instance to:"
 echo "$ARCHIVE/`timestamp`_barkhouse.tar.gz"; sleep 1
-
 tar czvf $ARCHIVE/`timestamp`_barkhouse.tar.gz $BACKUP_TARGET
 
-# Send compressed backup archive to another server
-#scp $ARCHIVE/`timestamp`_barkhouse.tar.gz host@hostname:minetest_backups/
+# Update and Clean archive folder - delete oldest.
+keep=7 # Set this to how many files want to keep
+cd $ARCHIVE
+discard=$(expr $keep - $(ls|wc -l))
+if [ $discard -lt 0 ]; then
+	ls -Bt|tail $discard|tr '\n' '\0'|xargs -0 printf "%b\0"|xargs -0 rm --
+fi
+
+# Send compressed backup MTFOLDER to another server
+#scp $MTFOLDER/`timestamp`_barkhouse.tar.gz host@hostname:minetest_backups/
 
