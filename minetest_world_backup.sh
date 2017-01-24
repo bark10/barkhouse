@@ -16,10 +16,6 @@ CONF="/home/$USER/.minetest/minetest.conf"
 systemctl stop minetest-server
 echo "Stopped the minetest server"
 
-# Move big files out of the way
-#mv $WORLD/rollback.sqlite $WORLD_DIR
-#echo "Moved some big files out of the way"
-#sleep 1
 
 # Check if backup target folder exists
 if [ -d $BACKUP_TARGET ]; then

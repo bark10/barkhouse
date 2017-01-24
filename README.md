@@ -3,8 +3,10 @@ This repository contains relevant code and info about changes made to the defaul
 Please use the issues page to report bugs and partake in the development.
 
 ### Useful Links
-[Issues page](https://github.com/bark10/barkhouse/issues
+[Issues page](https://github.com/bark10/barkhouse/issues)
+
 [Mods list](https://github.com/bark10/barkhouse/blob/master/MODS.md)
+
 [World Map](https://github.com/bark10/barkhouse/blob/master/worldmap.png)
 
 ### Colored chat
